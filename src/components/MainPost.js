@@ -33,7 +33,7 @@ export default function MainPost(props) {
 
   return (
     <Grid item xs={12} md={8}>
-      <Typography variant="h5" gutterBottom>
+      <Typography variant="h2" gutterBottom>
         {post.title}
       </Typography>
       <Typography variant="subtitle2" gutterBottom>
