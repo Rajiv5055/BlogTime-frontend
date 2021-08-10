@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -33,6 +33,8 @@ const useStyles = makeStyles((theme) => ({
 const name = "Name";
 
 export default function SideBar(props) {
+  let state = useRef(JSON.parse(localStorage.getItem('blogUser')));
+  console.log(state);
   const classes = useStyles();
   const { sidebar } = props;
   const PF = "https://blogtimeserver.herokuapp.com/file/";
@@ -50,7 +52,19 @@ export default function SideBar(props) {
         <Typography variant="h5" className={classes.title}>
           {name} : {sidebar.fullName}
         </Typography>
-        <Button className={classes.title} size="small" href="/profile" style={{color:"white", background:"#66b3ff"}} > Profile Link </Button>
+        {
+          state.current
+          ?
+          <Button className={classes.title} size="small" href="/profile" style={{color:"white", background:"#66b3ff"}} > Profile Link </Button>
+          :
+          <div>
+          {
+            sidebar.about
+            &&
+            <Typography><div style={{fontSize:"1.4em"}}>{sidebar.title}  :</div> {sidebar.about}</Typography>
+          }
+          </div>
+        }
         {
           (sidebar.github || sidebar.instagram || sidebar.facebook || sidebar.linkedin)
           &&
