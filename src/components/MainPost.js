@@ -33,7 +33,7 @@ export default function MainPost(props) {
 
   return (
     <Grid item xs={12} md={8}>
-      <Typography variant="h2" gutterBottom>
+      <Typography style={{background:"#E8E8E8", padding:"10px", borderRadius:"5px"}}variant="h3" gutterBottom>
         {post.title}
       </Typography>
       <Typography variant="subtitle2" gutterBottom>
@@ -69,13 +69,13 @@ export default function MainPost(props) {
           (storedData && storedData.userId === id) 
           &&
           <Tooltip title="Edit">
-            <IconButton color="primary" href={`/post/edit/${post._id}`} style={{position: 'absolute', top: 0, left: 50}}>
+            <IconButton color="primary" href={`/post/edit/${post._id}`} style={{position: 'absolute', top: 0, left: 50, marginLeft:"20px"}}>
               <EditIcon style={{color: '#1976d2'}}/>
             </IconButton>
           </Tooltip>
         }
       </Typography>
-      <Typography variant="body1" >
+      <Typography style={{background:"#F5F5F5", padding:"10px"}} variant="body1" >
         {post.content}
       </Typography>
     </Grid>

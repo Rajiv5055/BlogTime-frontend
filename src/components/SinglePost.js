@@ -15,6 +15,8 @@ const useStyles = makeStyles((theme) => ({
   card: {
     display: 'flex',
   },
+  cardheader:{
+  },
   cardDetails: {
     flex: 1,
   },
@@ -53,6 +55,7 @@ export default function SinglePost(props) {
         <Card className={classes.card}>
           <div className={classes.cardDetails}>
             <CardHeader
+              className={classes.cardheader}
               avatar={
                 <Avatar alt="A" src={PF + user} className={classes.large}/>
               }

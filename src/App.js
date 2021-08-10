@@ -18,9 +18,9 @@ import { AuthContext } from './context/auth-context';
 import UpdateUser from './pages/UpdateUser';
 
 const mainFeaturedPost = {
-  title: 'BlogTime is a place to write, read and connect',
+  title: 'Best platform to read, share and connect',
   description:
-    "It's easy and free to post your thinking on any topic and connect with millions of readers.",
+    "It provides an easy and free to post your thinking on any topic connect and explore with millions of readers.",
   image: 'https://source.unsplash.com/random',
   imgText: 'main image description',
 };
@@ -99,7 +99,7 @@ function App() {
         <CssBaseline />
         <Container maxWidth="lg" >
           <Router>
-            <Header />
+            <Header/>
               <Switch >
                 <Route path="/" exact>
                   <Home post={mainFeaturedPost} />

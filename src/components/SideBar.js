@@ -10,6 +10,8 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import Avatar from '@material-ui/core/Avatar';
+import user from './user.png';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   sidebarAboutBox: {
@@ -17,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.grey[200],
   },
   title: {
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(3),
   },
   large: {
     width: theme.spacing(10),
@@ -40,22 +42,20 @@ export default function SideBar(props) {
       <Paper elevation={0} className={classes.sidebarAboutBox}>
         {
           sidebar.profilePhoto
-          &&
+          ?
           <Avatar alt="Remy Sharp" src={PF + sidebar.profilePhoto} className={classes.large} />
+          :
+          <img alt="" style={{opacity:"70%", borderRadius:"50%"}} className={classes.large} src={user} />
         }
-        <Typography variant="h6" className={classes.title}>
+        <Typography variant="h5" className={classes.title}>
           {name} : {sidebar.fullName}
         </Typography>
-        {
-          sidebar.about
-          &&
-          <Typography>{sidebar.title} : {sidebar.about}</Typography>
-        }
+        <Button className={classes.title} size="small" href="/profile" style={{color:"white", background:"#66b3ff"}} > Profile Link </Button>
         {
           (sidebar.github || sidebar.instagram || sidebar.facebook || sidebar.linkedin)
           &&
-          <Typography variant="h6" gutterBottom >
-            Social
+          <Typography style={{fontSize:"1.2em", fontWeight:"bold"}}className={classes.title} variant="h6" gutterBottom >
+            SOCIAL MEDIA :
           </Typography>
         }
         <Grid container spacing={2} >

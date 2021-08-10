@@ -56,7 +56,6 @@ export default function UpdateUser() {
   const [file, setFile] = useState(null);
 
   const [open, setOpen] = useState(false);
-
   useEffect(() => {
     const getUser = async () => {
         const res = await axios.get(`https://blogtimeserver.herokuapp.com/api/auth/?userId=${path}`);
