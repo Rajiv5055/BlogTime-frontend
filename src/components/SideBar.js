@@ -34,7 +34,6 @@ const name = "Name";
 
 export default function SideBar(props) {
   let state = useRef(JSON.parse(localStorage.getItem('blogUser')));
-  console.log(state);
   const classes = useStyles();
   const { sidebar } = props;
   const PF = "https://blogtimeserver.herokuapp.com/file/";
